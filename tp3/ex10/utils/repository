@@ -1,0 +1,15 @@
+export class Repository<T> {
+  private items: T[] = [];
+
+  add(item: T) {
+    this.items.push(item);
+  }
+
+  remove(id: number) {
+    this.items = this.items.filter((_: any) => _.id !== id);
+  }
+
+  getAll(): T[] {
+    return this.items;
+  }
+}

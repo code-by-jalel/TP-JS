@@ -137,3 +137,42 @@ class Car implements Drivable {
         console.log(`${this.brand} is driving`);
     }
 }
+//exercice 7
+// 1.
+function identity<T>(value: T): T {
+  return value;
+}
+// 2.
+function getFirst<T>(arr: T[]): T {
+  return arr[0];
+}
+// 3.
+class Repository<T> {
+  private items: T[] = [];
+
+  add(item: T) {
+    this.items.push(item);
+  }
+
+  remove(index: number) {
+    this.items.splice(index, 1);
+  }
+
+  getAll(): T[] {
+    return this.items;
+  }
+}
+// 4.
+interface ApiResponse<T> {
+  data: T;
+  error?: string;
+}
+//exercice 8
+import { add } from "./math";
+
+console.log(add(5, 3));
+
+import type { Role } from "./types";
+
+const role: Role = "User";
+console.log(role);
